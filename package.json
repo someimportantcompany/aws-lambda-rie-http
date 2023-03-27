@@ -31,5 +31,10 @@
   "engines": {
     "node": ">=16.0",
     "npm": ">=8.0"
+  },
+  "nodemonConfig": {
+    "env": {
+      "DEBUG": "aws-lambda-rie-http"
+    }
   }
 }
