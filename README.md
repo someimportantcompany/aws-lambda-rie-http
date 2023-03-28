@@ -1,5 +1,7 @@
 # aws-lambda-rie-http
 
+[![Tests](https://github.com/someimportantcompany/aws-lambda-rie-http/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/someimportantcompany/aws-lambda-rie-http/actions/workflows/ci.yml)
+
 A Lambda Runtime Interface Emulator simulating a HTTP server.
 
 ```
