@@ -6,15 +6,19 @@
     "aws-lambda-rie-http": "./bin/http.js"
   },
   "scripts": {
-    "dev": "nodemon ./bin/http.mjs -- test/handlers/plain.handler",
-    "dev-ts": "nodemon --exec 'ts-node --esm' ./bin/http.mjs -- test/handlers/typed.handler",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon ./bin/http.mjs",
+    "dev-ts": "nodemon --exec 'ts-node --esm' ./bin/http.mjs",
+    "test": "nyc mocha"
   },
   "repository": "https://github.com/someimportantcompany/aws-lambda-rie-http",
   "bugs": "https://github.com/someimportantcompany/aws-lambda-rie-http/issues",
   "homepage": "https://github.com/someimportantcompany/aws-lambda-rie-http#readme",
   "author": "jdrydn <james@jdrydn.com> (https://jdrydn.com)",
   "license": "MIT",
+  "files": [
+    "bin/",
+    "lib/"
+  ],
   "dependencies": {
     "date-fns": "^2.29.3",
     "debug": "^4.3.4",
@@ -32,9 +36,27 @@
     "node": ">=16.0",
     "npm": ">=8.0"
   },
+  "mocha": {
+    "exit": true,
+    "extension": "mjs",
+    "recursive": true,
+    "reporter": "spec"
+  },
   "nodemonConfig": {
     "env": {
       "DEBUG": "aws-lambda-rie-http"
     }
+  },
+  "nyc": {
+    "extension": [
+      ".mjs"
+    ],
+    "exclude": [
+      ".test.mjs"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ]
   }
 }
