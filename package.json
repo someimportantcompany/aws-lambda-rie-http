@@ -52,7 +52,8 @@
       ".mjs"
     ],
     "exclude": [
-      ".test.mjs"
+      "test/handlers/*",
+      "*.test.mjs"
     ],
     "reporter": [
       "lcov",
