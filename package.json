@@ -1,14 +1,14 @@
 {
   "name": "aws-lambda-rie-http",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simulate HTTP requests to your Lambda function handlers",
   "bin": {
     "aws-lambda-rie-http": "./bin/http.js"
   },
   "scripts": {
-    "dev": "nodemon ./bin/http.mjs",
-    "dev-ts": "nodemon --exec 'ts-node --esm' ./bin/http.mjs",
-    "test": "nyc mocha"
+    "dev": "nodemon ./bin/http.js",
+    "dev-ts": "nodemon --exec 'ts-node --esm' ./bin/http.js",
+    "test": "mocha"
   },
   "repository": "https://github.com/someimportantcompany/aws-lambda-rie-http",
   "bugs": "https://github.com/someimportantcompany/aws-lambda-rie-http/issues",
@@ -20,16 +20,13 @@
     "lib/"
   ],
   "dependencies": {
-    "date-fns": "^2.29.3",
-    "debug": "^4.3.4",
-    "lodash.isplainobject": "^4.0.6",
-    "uuid": "^9.0.0"
+    "debug": "^4.3.4"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.114",
+    "axios": "^1.3.4",
     "mocha": "^10.2.0",
     "nodemon": "^2.0.22",
-    "nyc": "^15.1.0",
     "ts-node": "^10.9.1"
   },
   "engines": {
@@ -46,18 +43,5 @@
     "env": {
       "DEBUG": "aws-lambda-rie-http"
     }
-  },
-  "nyc": {
-    "extension": [
-      ".mjs"
-    ],
-    "exclude": [
-      "test/handlers/*",
-      "*.test.mjs"
-    ],
-    "reporter": [
-      "lcov",
-      "text"
-    ]
   }
 }
