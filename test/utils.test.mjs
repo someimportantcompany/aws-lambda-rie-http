@@ -11,7 +11,7 @@ describe('lib/utils', () => {
     it('should format a date', () => {
       assert.strictEqual(getApiGatewayReqTime(date1), '05/Nov/1985:14:39:23 +0000');
       assert.strictEqual(getApiGatewayReqTime(date2), '01/Jan/2020:09:00:00 +0000');
-      assert.strictEqual(getApiGatewayReqTime(date3), '27/Mar/2023:12:02:00 +0000');
+      assert.strictEqual(getApiGatewayReqTime(date3), '27/Mar/2023:11:02:00 +0000');
     });
   });
 

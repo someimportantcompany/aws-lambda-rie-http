@@ -37,6 +37,9 @@
     "exit": true,
     "extension": "mjs",
     "recursive": true,
+    "require": [
+      "./test/bootstrap"
+    ],
     "reporter": "spec"
   },
   "nodemonConfig": {
