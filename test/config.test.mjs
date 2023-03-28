@@ -7,7 +7,7 @@ describe('lib/config', () => {
       argv: [ '/bin/node', 'aws-lambda-rie-http', 'app.handler' ],
     });
     assert.deepStrictEqual(config, {
-      handlerFile: 'app.handler',
+      handlerName: 'app.handler',
       httpHost: '127.0.0.1',
       httpPort: 3000,
       eventFormat: 'LAMBDA_FUNCTION_EVENT',
@@ -26,7 +26,7 @@ describe('lib/config', () => {
       ],
     });
     assert.deepStrictEqual(config, {
-      handlerFile: 'app.handler',
+      handlerName: 'app.handler',
       httpHost: '0.0.0.0',
       httpPort: 4000,
       eventFormat: 'LAMBDA_FUNCTION_EVENT',
