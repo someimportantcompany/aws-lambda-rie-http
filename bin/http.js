@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const assert = require('assert');
 const debug = require('debug')('aws-lambda-rie-http');
 
 void (async function main() {
@@ -12,6 +13,8 @@ void (async function main() {
 
   try {
     const { handlerName, httpHost, httpPort, eventFormat, contextFormat } = config;
+    assert(typeof events[eventFormat] === 'function', `Expected ${eventFormat} to be valid event type`);
+    assert(typeof contexts[contextFormat] === 'function', `Expected ${contextFormat} to be valid context type`);
 
     const { [eventFormat]: createEvent } = events;
     const { [contextFormat]: createContext } = contexts;
