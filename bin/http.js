@@ -20,12 +20,12 @@ void (async function main() {
     const server = createServer({ createEvent, createContext, handlerName, handlerFn });
 
     ['SIGTERM', 'SIGUSR2'].forEach(event => process.once(event, async () => {
-      await server.stop().catch(err2 => console.error(err2));
+      await server.stop().catch(e => console.error(e));
       process.kill(process.pid);
     }));
-    ['uncaughtException', 'unhandledRejection'].forEach(event => process.once(event, async (err1) => {
-      console.error(err1);
-      await server.stop().catch(err2 => console.error(err2));
+    ['uncaughtException', 'unhandledRejection'].forEach(event => process.once(event, async (err) => {
+      console.error(err);
+      await server.stop().catch(e => console.error(e));
       process.kill(process.pid);
     }));
 
