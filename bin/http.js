@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const assert = require('assert');
 const debug = require('debug')('aws-lambda-rie-http');
 
 void (async function main() {
@@ -7,6 +6,7 @@ void (async function main() {
   const { events, contexts } = await import('../lib/lambda.mjs');
   const { getHandler } = await import('../lib/handlers.mjs');
   const { createServer } = await import('../lib/server.mjs');
+  const { assert } = await import('../lib/utils.mjs');
 
   const config = getConfig({ argv: process.argv });
   debug('config', config);

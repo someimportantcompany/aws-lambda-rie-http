@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "nodemon ./bin/http.js",
     "dev-ts": "nodemon --exec 'ts-node --esm' ./bin/http.js",
+    "start": "node ./bin/http.js",
+    "start-ts": "ts-node --esm ./bin/http.js",
     "test": "mocha"
   },
   "repository": "https://github.com/someimportantcompany/aws-lambda-rie-http",
