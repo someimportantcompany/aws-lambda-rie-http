@@ -1,5 +1,6 @@
 # aws-lambda-rie-http
 
+[![NPM](https://badge.fury.io/js/aws-lambda-rie-http.svg)](https://npm.im/aws-lambda-rie-http)
 [![Tests](https://github.com/someimportantcompany/aws-lambda-rie-http/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/someimportantcompany/aws-lambda-rie-http/actions/workflows/ci.yml)
 
 A Lambda Runtime Interface Emulator simulating a HTTP server.
